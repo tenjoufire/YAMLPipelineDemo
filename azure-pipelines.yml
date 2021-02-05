@@ -10,7 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/*.sln'
+  BuildParameters.solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -35,6 +35,7 @@ steps:
       solution: $(BuildParameters.solution)
       platform: $(BuildPlatform)
       configuration: $(BuildConfiguration)
+
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
