@@ -35,17 +35,3 @@ steps:
       solution: $(BuildParameters.solution)
       platform: $(BuildPlatform)
       configuration: $(BuildConfiguration)
-
-- task: CopyFiles@2
-  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
-  condition: succeededOrFailed()
-  inputs:
-      SourceFolder: $(system.defaultworkingdirectory)
-      Contents: '**\bin\$(BuildConfiguration)\**'
-      TargetFolder: $(build.artifactstagingdirectory)
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-  condition: succeededOrFailed()
-  inputs:
-      PathtoPublish: $(build.artifactstagingdirectory)
-      TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
