@@ -35,7 +35,7 @@ namespace YAMLPipelineDemo
     {
         //デモ用（本番時はシークレットとして扱う）
         static string subscriptionKey = ConfigurationManager.AppSettings["visionkey"];
-        static string endpoint = ConfigurationManager.AppSettings["visonendpoint"];
+        static string endpoint = ConfigurationManager.AppSettings["visionendpoint"];
 
         int WIDTH = 1280;
         int HEIGHT = 720;
