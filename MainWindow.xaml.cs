@@ -41,6 +41,7 @@ namespace YAMLPipelineDemo
         int HEIGHT = 720;
         int captureCount = 0;
         static int peopleCount = 0;
+        static string resultJsonString = "";
 
         private string currentDir = Directory.GetCurrentDirectory();
         private string filepath = "";
@@ -169,6 +170,7 @@ namespace YAMLPipelineDemo
         public void UIUpdate(object sender, EventArgs e)
         {
             resultTextBlock.Text = $"{peopleCount}人 検出されました";
+            resultTextBlockJson.Text = resultJsonString;
         }
 
         #region ComputerVisonMethods
@@ -208,8 +210,8 @@ namespace YAMLPipelineDemo
             foreach (var obj in results.Objects)
             {
                 if (obj.ObjectProperty.Contains("person")) peopleCount++;
+                resultJsonString += $"ObjectProperty:{obj.ObjectProperty}{Environment.NewLine} Confidence:{obj.Confidence}{Environment.NewLine} Rectangle:[x:{obj.Rectangle.X},y:{obj.Rectangle.Y},w:{obj.Rectangle.W},h:{obj.Rectangle.H}]{Environment.NewLine}";
             }
-
         }
 
         #endregion

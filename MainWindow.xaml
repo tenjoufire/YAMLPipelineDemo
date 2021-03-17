@@ -10,11 +10,12 @@
     <Grid>
         <Button x:Name="takePicButton" Content="写真をとる" Margin="35,44,1050,587" Click="TakePicButton_Click"/>
         <Image x:Name="capturedImg" Margin="30,153,360,11"/>
-        <TextBlock FontSize="20" x:Name="resultTextBlock" HorizontalAlignment="Left" Margin="883,402,0,0" Text="検出結果はここに表示されます" TextWrapping="Wrap" VerticalAlignment="Top" Height="52" Width="278"/>
+        <TextBlock FontSize="20" x:Name="resultTextBlock" HorizontalAlignment="Left" Margin="883,137,0,0" Text="検出結果はここに表示されます" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="278" />
+        <TextBlock FontSize="10" x:Name="resultTextBlockJson" HorizontalAlignment="Left" Margin="883,378,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="277" Width="278" />
         <Button x:Name="intervalCaptureButton" Click="intervalCaptureButton_Click" Content="インターバル撮影" HorizontalAlignment="Left" Margin="169,44,0,0" VerticalAlignment="Top" Height="53" Width="95"/>
         <TextBlock HorizontalAlignment="Left" Height="24" Margin="299,48,0,0" Text="interval" TextWrapping="Wrap" VerticalAlignment="Top" Width="85"/>
         <TextBox x:Name="intervalTimeText" HorizontalAlignment="Left" Margin="299,77,0,0" Text="10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Image x:Name="sentImage" HorizontalAlignment="Left" Height="187" Margin="864,454,0,0" VerticalAlignment="Top" Width="301"/>
+        <Image x:Name="sentImage" HorizontalAlignment="Left" Height="187" Margin="883,174,0,0" VerticalAlignment="Top" Width="301"/>
 
     </Grid>
 </Window>
